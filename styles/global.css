@@ -1,0 +1,214 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, sans-serif;
+}
+
+.hidden {
+    display: none;
+    opacity: 0;
+}
+
+.task-app {
+    height: 100%;
+    width: 100%;
+    padding: 40px auto;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.header {
+    margin: 10px auto;
+}
+
+.header h1 {
+    font-size: 28px;
+}
+
+.sidebar {
+    width: 300px;
+    height: 100vh;
+    padding: 30px 10px;
+    background: #333;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.input-wrapper {
+    width: 50vw;
+    margin: 0 auto;
+    margin-bottom: 25px;
+    display: flex;
+    flex-grow: 1;
+    padding: 5px;
+    align-items: center;
+    justify-items: flex-end;
+    position: relative;
+}
+
+.input {
+    margin: auto 10px;
+    border: 4px solid rgba(30, 245, 30, 1);
+    border-radius: 15px;
+    background: transparent;
+    color: rgba(0, 25, 0, 1);
+    font-weight: bold;
+}
+
+.task-input {
+    height: 40px;
+    min-width: 120px;
+    width: 100%;
+    padding: 5px 20px;
+    font-size: 16px;
+}
+
+.task-add {
+    min-width: 40px;
+    height: 40px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+    background: rgba(30, 245, 30, 1);
+    border-radius: 50%;
+    border: 5px solid rgba(30, 245, 30, 1);
+    cursor: pointer;
+    position: relative;
+    transition: .3s linear;
+}
+
+.add {
+    position: absolute;
+    width: 25px;
+    height: 5px;
+    background: #fff;
+    top: calc(50% - 2px);
+    bottom: 50%;
+    left: 3px;
+    transition: .3s linear;
+}
+
+.add::before {
+    content: '';
+    width: 25px;
+    height: 5px;
+    background: #fff;
+    position: absolute;
+    left: 0;
+    transform: rotate(90deg);
+    transition: .2s linear;
+}
+
+.task-add:hover .add,
+.task-add:hover .add::before {
+    background: rgba(30, 245, 30, 1);
+    transform: rotate(90deg);
+}
+
+.task-add:hover {
+    border: 5px solid rgba(30, 245, 30, 1);
+    color: rgba(30, 245, 30, 1);
+    background: transparent;
+    padding: 0;
+}
+.list {
+    width: 50vw;
+    height: 100%;
+    margin: 0 auto;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: flex-start;
+}
+.list li {
+    width: 100%;
+    background-color: rgba(255, 255, 14, 0.8);
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    justify-items: center;
+    margin: 5px auto;
+    padding: 5px 0;
+    border-bottom: 2px solid #823;
+    border-top: 2px solid #823;
+    border-radius: 10px;
+}
+.task-remove {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background: transparent;
+    color: #fff;
+    position: relative;
+    cursor: pointer;
+}
+.task-remove::before {
+    content: '\2717';
+    font-size: 24px;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid #922;
+    border-radius: 35%;
+    background: #fff;
+    color: #922;
+    transition: all .3s ease-in-out;
+}
+
+.task-remove:hover::before {
+    border-radius: 50%;
+    background: #922;
+    color: #fff;
+    font-weight: bold;
+    transform: rotate(-360deg) scale(0.95);
+}
+
+.task-description {
+    width: 100%;
+    min-height: 40px;
+    height: auto;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item {
+    width: 40px;
+    height: 40px;
+    margin: auto 10px;
+    padding: 10px;
+    border: 3px dashed rgba(30, 245, 30, 1);
+    border-radius: 15px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    word-wrap: break-word;
+}
+
+@media (max-width: 45rem) {
+    .input-wrapper {
+        width: 100vw;
+    }
+    .list {
+        width: 90vw;
+        margin: 0px auto;
+        display: flex;
+        flex-grow: 1;
+    }
+}
